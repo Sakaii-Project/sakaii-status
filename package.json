@@ -13,7 +13,7 @@
     "sakaii"
   ],
   "author": "Sakaii Project",
-  "license": "MIT",
+  "license": "UNLICENSED",
   "dependencies": {
     "cookie-parser": "^1.4.7",
     "express": "^4.21.2"

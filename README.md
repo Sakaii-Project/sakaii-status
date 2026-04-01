@@ -120,6 +120,14 @@ Pour un usage plus propre en continu, vous pouvez l'executer avec `systemd`, `pm
 - des headers de securite HTTP sont envoyes par le serveur
 - ce projet est pense pour un homelab et une exposition derriere Cloudflare Tunnel
 
+## Licence
+
+Ce projet est publie en depot public mais reste proprietaire.
+
+- consultation du code autorisee
+- reutilisation, modification, deployment ou redistribution interdits sans autorisation prealable
+- voir le fichier `LICENSE`
+
 ## Services initialises par defaut
 
 - `sakaii.org`
