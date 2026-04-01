@@ -62,6 +62,11 @@ sakaii-status/
 ├── docker-compose.yml
 ├── data.default.json
 ├── data.json
+├── deploy/
+│   └── lxc/
+│       ├── README.md
+│       ├── install-lxc.sh
+│       └── sakaii-status.service
 ├── public/
 │   ├── index.html
 │   ├── admin.html
@@ -72,6 +77,7 @@ sakaii-status/
 │   └── screenshots/
 ├── package.json
 ├── .env.example
+├── .env.production.example
 └── README.md
 ```
 
@@ -154,16 +160,72 @@ Puis :
 
 ## Deploiement LXC / Proxmox
 
-Exemple simple :
+Methode recommandee : `Node.js + systemd` dans un LXC Debian 12 ou Ubuntu 24.04.
 
-1. Installer Node.js dans le conteneur
-2. Copier le projet dans le LXC
-3. Creer un fichier `.env`
-4. Lancer `npm install`
-5. Lancer `npm start`
-6. Exposer l'app via votre Cloudflare Tunnel vers `http://127.0.0.1:3000`
+### Profil LXC conseille
 
-Pour un usage plus propre en continu, vous pouvez l'executer avec `systemd`, `pm2` ou un conteneur Docker leger.
+- Debian 12 ou Ubuntu 24.04
+- 1 vCPU minimum
+- 512 Mo RAM minimum
+- 4 a 8 Go disque
+- conteneur non privilegie de preference
+
+### Deploiement rapide dans le LXC
+
+1. Cloner le repo dans le conteneur :
+
+```bash
+git clone https://github.com/Sakaii-Project/sakaii-status.git
+cd sakaii-status
+```
+
+2. Lancer l'installation :
+
+```bash
+chmod +x deploy/lxc/install-lxc.sh
+sudo ./deploy/lxc/install-lxc.sh
+```
+
+3. Configurer la production :
+
+```bash
+sudo nano /opt/sakaii-status/app/.env
+```
+
+4. Redemarrer le service :
+
+```bash
+sudo systemctl restart sakaii-status
+sudo systemctl status sakaii-status
+```
+
+### Fichiers utilises pour le mode LXC
+
+- `deploy/lxc/install-lxc.sh`
+- `deploy/lxc/sakaii-status.service`
+- `deploy/lxc/README.md`
+- `.env.production.example`
+
+### Cloudflare Tunnel
+
+Expose simplement le service local du conteneur vers :
+
+```text
+http://127.0.0.1:3000
+```
+
+Tu n'as pas besoin de gerer HTTPS dans l'application elle-meme.
+
+Pour une mise a jour, utilise :
+
+```bash
+cd /opt/sakaii-status/app
+sudo -u sakaii git pull --ff-only
+sudo -u sakaii npm ci --omit=dev
+sudo systemctl restart sakaii-status
+```
+
+Si tu preferes, le projet peut aussi tourner en `docker compose`, mais pour un LXC Proxmox simple le mode `systemd` reste le plus direct.
 
 ## Securite
 

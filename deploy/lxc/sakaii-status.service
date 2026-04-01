@@ -1,0 +1,23 @@
+[Unit]
+Description=Sakaii Status
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=sakaii
+Group=sakaii
+WorkingDirectory=/opt/sakaii-status/app
+EnvironmentFile=/opt/sakaii-status/app/.env
+ExecStart=/usr/bin/npm start
+Restart=always
+RestartSec=5
+TimeoutStopSec=15
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/opt/sakaii-status/app
+
+[Install]
+WantedBy=multi-user.target
