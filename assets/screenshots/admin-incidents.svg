@@ -1,0 +1,36 @@
+<svg width="1600" height="980" viewBox="0 0 1600 980" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="980" fill="#F3F4F7"/>
+  <rect x="140" y="80" width="1320" height="110" rx="32" fill="white"/>
+  <text x="200" y="130" fill="#8A909B" font-family="Arial, sans-serif" font-size="18" font-weight="700">ADMINISTRATION</text>
+  <text x="200" y="170" fill="#16181D" font-family="Arial, sans-serif" font-size="48" font-weight="700">Sakaii Status</text>
+  <rect x="1050" y="110" width="280" height="50" rx="25" fill="#F1F3F7"/>
+  <rect x="1060" y="118" width="84" height="34" rx="17" fill="white"/>
+  <text x="1102" y="140" fill="#16181D" font-family="Arial, sans-serif" font-size="16" font-weight="700" text-anchor="middle">Incidents</text>
+  <text x="1200" y="140" fill="#6F7480" font-family="Arial, sans-serif" font-size="16" font-weight="700" text-anchor="middle">Services</text>
+  <text x="1288" y="140" fill="#6F7480" font-family="Arial, sans-serif" font-size="16" font-weight="700" text-anchor="middle">Paramètres</text>
+
+  <rect x="140" y="230" width="430" height="610" rx="32" fill="white"/>
+  <text x="190" y="290" fill="#16181D" font-family="Arial, sans-serif" font-size="30" font-weight="700">Nouvel incident</text>
+  <rect x="190" y="325" width="330" height="64" rx="18" fill="#F7F8FA"/>
+  <rect x="190" y="410" width="330" height="64" rx="18" fill="#F7F8FA"/>
+  <rect x="190" y="495" width="330" height="64" rx="18" fill="#F7F8FA"/>
+  <rect x="190" y="580" width="330" height="64" rx="18" fill="#F7F8FA"/>
+  <rect x="190" y="665" width="330" height="110" rx="18" fill="#F7F8FA"/>
+  <rect x="190" y="792" width="220" height="52" rx="26" fill="#111318"/>
+  <text x="300" y="825" fill="white" font-family="Arial, sans-serif" font-size="18" font-weight="700" text-anchor="middle">Ajouter l'incident</text>
+
+  <rect x="600" y="230" width="860" height="610" rx="32" fill="white"/>
+  <text x="650" y="290" fill="#16181D" font-family="Arial, sans-serif" font-size="30" font-weight="700">Historique des incidents</text>
+
+  <rect x="650" y="330" width="760" height="180" rx="24" fill="#FBFBFC"/>
+  <text x="690" y="372" fill="#8A909B" font-family="Arial, sans-serif" font-size="18">1 avril 2026, 12:10</text>
+  <text x="690" y="414" fill="#16181D" font-family="Arial, sans-serif" font-size="28" font-weight="700">Migration du stockage média</text>
+  <text x="690" y="452" fill="#6F7480" font-family="Arial, sans-serif" font-size="20">stream.sakaii.org · Migration</text>
+  <rect x="1240" y="354" width="120" height="42" rx="21" fill="#FDE8E8"/>
+  <text x="1300" y="381" fill="#B11D1D" font-family="Arial, sans-serif" font-size="18" font-weight="700" text-anchor="middle">Supprimer</text>
+
+  <rect x="650" y="540" width="760" height="180" rx="24" fill="#FBFBFC"/>
+  <text x="690" y="582" fill="#8A909B" font-family="Arial, sans-serif" font-size="18">31 mars 2026, 18:45</text>
+  <text x="690" y="624" fill="#16181D" font-family="Arial, sans-serif" font-size="28" font-weight="700">Maintenance applicative</text>
+  <text x="690" y="662" fill="#6F7480" font-family="Arial, sans-serif" font-size="20">cloud.sakaii.org · Mise à jour</text>
+</svg>

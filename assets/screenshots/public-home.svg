@@ -1,0 +1,42 @@
+<svg width="1600" height="980" viewBox="0 0 1600 980" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="980" fill="#F3F4F7"/>
+  <circle cx="1320" cy="120" r="160" fill="#FFE7E7"/>
+  <circle cx="240" cy="120" r="200" fill="#FFFFFF" fill-opacity="0.8"/>
+  <rect x="160" y="90" width="1280" height="220" rx="36" fill="white"/>
+  <rect x="210" y="140" width="220" height="56" rx="28" fill="#F1F3F7"/>
+  <circle cx="248" cy="168" r="10" fill="#24B159"/>
+  <text x="276" y="176" fill="#6F7480" font-family="Arial, sans-serif" font-size="24" font-weight="700">Tous les systèmes sont opérationnels</text>
+  <text x="800" y="220" fill="#16181D" font-family="Arial, sans-serif" font-size="64" font-weight="700" text-anchor="middle">Sakaii Status</text>
+  <text x="800" y="270" fill="#6F7480" font-family="Arial, sans-serif" font-size="24" text-anchor="middle">Monitoring public minimaliste pour les services self-hosted du projet Sakaii</text>
+  <text x="800" y="308" fill="#8A909B" font-family="Arial, sans-serif" font-size="18" text-anchor="middle">Dernière vérification · 1 avril 2026, 12:30</text>
+
+  <text x="170" y="380" fill="#16181D" font-family="Arial, sans-serif" font-size="34" font-weight="700">Services</text>
+  <rect x="160" y="410" width="620" height="160" rx="28" fill="white"/>
+  <rect x="820" y="410" width="620" height="160" rx="28" fill="white"/>
+  <rect x="160" y="600" width="620" height="160" rx="28" fill="white"/>
+  <rect x="820" y="600" width="620" height="160" rx="28" fill="white"/>
+
+  <text x="210" y="474" fill="#16181D" font-family="Arial, sans-serif" font-size="30" font-weight="700">sakaii.org</text>
+  <text x="210" y="512" fill="#6F7480" font-family="Arial, sans-serif" font-size="22">Blog &amp; portfolio (Ghost CMS)</text>
+  <rect x="610" y="445" width="120" height="46" rx="23" fill="#E6F6ED"/>
+  <text x="670" y="474" fill="#1D7C46" font-family="Arial, sans-serif" font-size="20" font-weight="700" text-anchor="middle">En ligne</text>
+
+  <text x="870" y="474" fill="#16181D" font-family="Arial, sans-serif" font-size="30" font-weight="700">cloud.sakaii.org</text>
+  <text x="870" y="512" fill="#6F7480" font-family="Arial, sans-serif" font-size="22">Sakaii Cloud (Nextcloud)</text>
+  <rect x="1270" y="445" width="120" height="46" rx="23" fill="#E6F6ED"/>
+  <text x="1330" y="474" fill="#1D7C46" font-family="Arial, sans-serif" font-size="20" font-weight="700" text-anchor="middle">En ligne</text>
+
+  <text x="210" y="664" fill="#16181D" font-family="Arial, sans-serif" font-size="30" font-weight="700">stream.sakaii.org</text>
+  <text x="210" y="702" fill="#6F7480" font-family="Arial, sans-serif" font-size="22">Jellyfin (Streaming)</text>
+  <rect x="610" y="635" width="120" height="46" rx="23" fill="#FFF1DF"/>
+  <text x="670" y="664" fill="#BA6C12" font-family="Arial, sans-serif" font-size="20" font-weight="700" text-anchor="middle">Migration</text>
+
+  <text x="870" y="664" fill="#16181D" font-family="Arial, sans-serif" font-size="30" font-weight="700">pdf.sakaii.org</text>
+  <text x="870" y="702" fill="#6F7480" font-family="Arial, sans-serif" font-size="22">Stirling PDF</text>
+  <rect x="1280" y="635" width="110" height="46" rx="23" fill="#FDE8E8"/>
+  <text x="1335" y="664" fill="#B11D1D" font-family="Arial, sans-serif" font-size="20" font-weight="700" text-anchor="middle">Hors ligne</text>
+
+  <text x="170" y="838" fill="#16181D" font-family="Arial, sans-serif" font-size="34" font-weight="700">Incidents récents</text>
+  <rect x="160" y="860" width="1280" height="74" rx="24" fill="white"/>
+  <text x="210" y="905" fill="#6F7480" font-family="Arial, sans-serif" font-size="18">1 avril 2026 · stream.sakaii.org · Migration du stockage média</text>
+</svg>

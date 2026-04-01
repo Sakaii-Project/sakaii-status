@@ -2,6 +2,36 @@
 
 Page de statut publique et panel admin pour monitorer les services self-hosted du projet Sakaii.
 
+## About
+
+Sakaii Status est une page de statut publique, minimaliste et autonome pour homelab.
+
+- page publique elegante pour exposer l'etat de tes services
+- panel admin simple, protege par mot de passe
+- stockage local JSON, sans base de donnees
+- monitoring HTTP integre pour basculer automatiquement entre `En ligne` et `Hors ligne`
+- deploiement rapide en Node.js, Docker ou conteneur LXC Proxmox
+
+## Captures
+
+Les captures du projet sont stockees dans `assets/screenshots/`.
+
+- `assets/screenshots/public-home.svg`
+- `assets/screenshots/admin-incidents.svg`
+- `assets/screenshots/admin-services.svg`
+
+### Vue publique
+
+![Vue publique](assets/screenshots/public-home.svg)
+
+### Admin · Incidents
+
+![Admin incidents](assets/screenshots/admin-incidents.svg)
+
+### Admin · Services
+
+![Admin services](assets/screenshots/admin-services.svg)
+
 ## Fonctionnalites
 
 - Page publique sur `/`
@@ -28,6 +58,8 @@ Page de statut publique et panel admin pour monitorer les services self-hosted d
 ```text
 sakaii-status/
 ├── server.js
+├── Dockerfile
+├── docker-compose.yml
 ├── data.default.json
 ├── data.json
 ├── public/
@@ -36,6 +68,8 @@ sakaii-status/
 │   ├── index.js
 │   ├── admin.js
 │   └── styles.css
+├── assets/
+│   └── screenshots/
 ├── package.json
 ├── .env.example
 └── README.md
@@ -82,6 +116,26 @@ npm start
 ```
 
 L'application sera accessible sur :
+
+- Page publique : `http://localhost:3000/`
+- Admin : `http://localhost:3000/admin`
+
+## Lancement avec Docker
+
+Build local :
+
+```bash
+docker build -t sakaii-status .
+docker run -p 3000:3000 -e ADMIN_PASSWORD=sakaii -v $(pwd)/data.json:/app/data.json sakaii-status
+```
+
+Ou avec Docker Compose :
+
+```bash
+docker compose up -d --build
+```
+
+Puis :
 
 - Page publique : `http://localhost:3000/`
 - Admin : `http://localhost:3000/admin`

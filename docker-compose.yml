@@ -1,0 +1,18 @@
+services:
+  sakaii-status:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: sakaii-status
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      PORT: 3000
+      ADMIN_PASSWORD: sakaii
+      MONITOR_INTERVAL_MS: 60000
+      LOGIN_MAX_ATTEMPTS: 3
+      LOGIN_LOCKOUT_MS: 900000
+      MAX_EVENT_LOGS: 150
+    volumes:
+      - ./data.json:/app/data.json
