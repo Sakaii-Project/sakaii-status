@@ -1,0 +1,21 @@
+{
+  "name": "sakaii-status",
+  "version": "1.0.0",
+  "description": "Public status page for Sakaii Project services",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "status-page",
+    "express",
+    "homelab",
+    "sakaii"
+  ],
+  "author": "Sakaii Project",
+  "license": "MIT",
+  "dependencies": {
+    "cookie-parser": "^1.4.7",
+    "express": "^4.21.2"
+  }
+}

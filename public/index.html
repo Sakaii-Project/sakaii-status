@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sakaii Status</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <main class="layout">
+        <section class="hero-card surface">
+          <div class="hero-badge">
+            <span class="status-dot" id="global-dot"></span>
+            <span id="global-label">Chargement...</span>
+          </div>
+          <h1 class="hero-title">Sakaii Status</h1>
+          <p class="hero-copy" id="global-detail">
+            Verification en cours des services Sakaii.
+          </p>
+          <p class="meta-line" id="last-checked">Derniere verification: ...</p>
+        </section>
+
+        <section class="section-block">
+          <div class="section-heading">
+            <h2>Services</h2>
+          </div>
+          <div class="card-grid" id="services-list"></div>
+        </section>
+
+        <section class="section-block">
+          <div class="section-heading">
+            <h2>Incidents recents</h2>
+            <span class="section-note">8 derniers maximum</span>
+          </div>
+          <div class="incident-list surface" id="incidents-list"></div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <span
+          >Propulse par
+          <a href="https://sakaii.org" target="_blank" rel="noreferrer"
+            >Sakaii Project</a
+          ></span
+        >
+        <a class="admin-link" href="/admin">Admin</a>
+      </footer>
+    </div>
+
+    <script src="/index.js" defer></script>
+  </body>
+</html>

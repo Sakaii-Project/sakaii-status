@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sakaii Status Admin</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="toast" id="toast"></div>
+
+    <div class="page-shell admin-shell">
+      <main class="layout admin-layout">
+        <section class="surface auth-card" id="login-view">
+          <p class="eyebrow">Administration</p>
+          <h1 class="admin-title">Sakaii Status</h1>
+          <p class="admin-copy">
+            Connectez-vous avec le mot de passe admin pour gerer les statuts,
+            les incidents et les services.
+          </p>
+          <form id="login-form" class="stack-form">
+            <label class="field">
+              <span>Mot de passe</span>
+              <input
+                id="password"
+                name="password"
+                type="password"
+                autocomplete="current-password"
+                placeholder="sakaii"
+                required
+              />
+            </label>
+            <button class="primary-button" type="submit">Se connecter</button>
+            <p class="error-text" id="login-error"></p>
+          </form>
+        </section>
+
+        <section class="admin-panel hidden" id="admin-view">
+          <div class="admin-topbar">
+            <div>
+              <p class="eyebrow">Administration</p>
+              <h1 class="admin-title">Sakaii Status</h1>
+              <p class="meta-line" id="admin-last-checked"></p>
+            </div>
+            <button class="secondary-button" id="logout-button" type="button">
+              Deconnexion
+            </button>
+          </div>
+
+          <div class="segmented-control" id="tab-control">
+            <button class="segment active" data-tab="incidents" type="button">
+              Incidents
+            </button>
+            <button class="segment" data-tab="services" type="button">
+              Services
+            </button>
+            <button class="segment" data-tab="settings" type="button">
+              Parametres
+            </button>
+            <button class="segment" data-tab="journal" type="button">
+              Journal
+            </button>
+          </div>
+
+          <section class="tab-panel active" data-panel="incidents">
+            <div class="admin-grid">
+              <div class="surface admin-card">
+                <div class="section-heading">
+                  <h2>Nouvel incident</h2>
+                </div>
+                <form id="incident-form" class="stack-form">
+                  <label class="field">
+                    <span>Service</span>
+                    <select id="incident-service" name="serviceId" required></select>
+                  </label>
+
+                  <label class="field">
+                    <span>Nouveau statut</span>
+                    <select id="incident-status" name="status" required>
+                      <option value="online">En ligne</option>
+                      <option value="update">Mise a jour</option>
+                      <option value="migration">Migration</option>
+                      <option value="offline">Hors ligne</option>
+                    </select>
+                  </label>
+
+                  <label class="field">
+                    <span>Titre</span>
+                    <input
+                      id="incident-title"
+                      name="title"
+                      type="text"
+                      maxlength="140"
+                      placeholder="Ex. Maintenance du stockage"
+                      required
+                    />
+                  </label>
+
+                  <label class="field">
+                    <span>Heure de fin</span>
+                    <input id="incident-ended-at" name="endedAt" type="datetime-local" />
+                  </label>
+
+                  <label class="field">
+                    <span>Raison / details</span>
+                    <textarea
+                      id="incident-details"
+                      name="details"
+                      rows="5"
+                      maxlength="2000"
+                      placeholder="Optionnel"
+                    ></textarea>
+                  </label>
+
+                  <button class="primary-button" type="submit">
+                    Ajouter l'incident
+                  </button>
+                </form>
+              </div>
+
+              <div class="surface admin-card">
+                <div class="section-heading">
+                  <h2>Historique des incidents</h2>
+                </div>
+                <div class="admin-list" id="admin-incidents-list"></div>
+              </div>
+            </div>
+          </section>
+
+          <section class="tab-panel" data-panel="services">
+            <div class="admin-grid">
+              <div class="surface admin-card">
+                <div class="section-heading">
+                  <h2>Ajouter un service</h2>
+                </div>
+                <form id="service-form" class="stack-form">
+                  <label class="field">
+                    <span>Nom</span>
+                    <input id="service-name" name="name" type="text" maxlength="120" required />
+                  </label>
+
+                  <label class="field">
+                    <span>URL</span>
+                    <input
+                      id="service-url"
+                      name="url"
+                      type="url"
+                      maxlength="400"
+                      placeholder="https://status.sakaii.org"
+                      required
+                    />
+                  </label>
+
+                  <label class="field">
+                    <span>Description</span>
+                    <textarea
+                      id="service-description"
+                      name="description"
+                      rows="4"
+                      maxlength="180"
+                      placeholder="Description courte"
+                    ></textarea>
+                  </label>
+
+                  <label class="checkbox-field">
+                    <input id="service-monitoring" name="monitoringEnabled" type="checkbox" checked />
+                    <span>Monitoring automatique online / offline</span>
+                  </label>
+
+                  <button class="primary-button" type="submit">Ajouter le service</button>
+                </form>
+              </div>
+
+              <div class="service-admin-grid" id="admin-services-list"></div>
+            </div>
+          </section>
+
+          <section class="tab-panel" data-panel="settings">
+            <div class="settings-grid">
+              <div class="surface admin-card">
+                <div class="section-heading">
+                  <h2>Securite</h2>
+                </div>
+                <div class="info-banner hidden" id="default-password-banner">
+                  Le mot de passe par defaut <strong>sakaii</strong> est encore actif.
+                </div>
+                <form id="password-form" class="stack-form">
+                  <label class="field">
+                    <span>Mot de passe actuel</span>
+                    <input id="current-password" type="password" autocomplete="current-password" required />
+                  </label>
+
+                  <label class="field">
+                    <span>Nouveau mot de passe</span>
+                    <input id="new-password" type="password" autocomplete="new-password" required />
+                  </label>
+
+                  <label class="field">
+                    <span>Confirmation</span>
+                    <input id="confirm-password" type="password" autocomplete="new-password" required />
+                  </label>
+
+                  <button class="primary-button" type="submit">Mettre a jour le mot de passe</button>
+                </form>
+              </div>
+
+              <div class="surface admin-card">
+                <div class="section-heading">
+                  <h2>Monitoring</h2>
+                </div>
+                <div class="meta-stack">
+                  <p class="admin-copy left">
+                    Les URLs sont verifiees automatiquement et les services repassent
+                    entre <strong>En ligne</strong> et <strong>Hors ligne</strong>.
+                    Les statuts <strong>Mise a jour</strong> et <strong>Migration</strong>
+                    restent manuels.
+                  </p>
+                  <p class="meta-line no-top" id="monitor-interval"></p>
+                  <p class="meta-line no-top" id="security-threshold"></p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="tab-panel" data-panel="journal">
+            <div class="surface admin-card">
+              <div class="section-heading">
+                <h2>Journal securite & systeme</h2>
+              </div>
+              <div class="admin-list" id="admin-events-list"></div>
+            </div>
+          </section>
+        </section>
+      </main>
+    </div>
+
+    <script src="/admin.js" defer></script>
+  </body>
+</html>

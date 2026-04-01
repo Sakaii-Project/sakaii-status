@@ -1,0 +1,59 @@
+{
+  "services": [
+    {
+      "id": "sakaii-org",
+      "name": "sakaii.org",
+      "url": "https://sakaii.org",
+      "description": "Blog & portfolio (Ghost CMS)",
+      "status": "online",
+      "updatedAt": "2026-04-01T00:00:00.000Z",
+      "monitoringEnabled": true,
+      "lastPingAt": "",
+      "lastHttpStatus": null,
+      "lastError": ""
+    },
+    {
+      "id": "cloud-sakaii-org",
+      "name": "cloud.sakaii.org",
+      "url": "https://cloud.sakaii.org",
+      "description": "Sakaii Cloud (Nextcloud)",
+      "status": "online",
+      "updatedAt": "2026-04-01T00:00:00.000Z",
+      "monitoringEnabled": true,
+      "lastPingAt": "",
+      "lastHttpStatus": null,
+      "lastError": ""
+    },
+    {
+      "id": "stream-sakaii-org",
+      "name": "stream.sakaii.org",
+      "url": "https://stream.sakaii.org",
+      "description": "Jellyfin (Streaming)",
+      "status": "online",
+      "updatedAt": "2026-04-01T00:00:00.000Z",
+      "monitoringEnabled": true,
+      "lastPingAt": "",
+      "lastHttpStatus": null,
+      "lastError": ""
+    },
+    {
+      "id": "pdf-sakaii-org",
+      "name": "pdf.sakaii.org",
+      "url": "https://pdf.sakaii.org",
+      "description": "Stirling PDF",
+      "status": "online",
+      "updatedAt": "2026-04-01T00:00:00.000Z",
+      "monitoringEnabled": true,
+      "lastPingAt": "",
+      "lastHttpStatus": null,
+      "lastError": ""
+    }
+  ],
+  "incidents": [],
+  "events": [],
+  "meta": {
+    "lastCheckedAt": "2026-04-01T00:00:00.000Z",
+    "adminPasswordHash": "",
+    "monitoringIntervalMs": 60000
+  }
+}
